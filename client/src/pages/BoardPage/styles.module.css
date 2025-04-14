@@ -1,0 +1,57 @@
+.itemContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.boardTitle {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.statusList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+  min-height: 500px;
+}
+
+.statusListItem {
+  padding: 10px;
+  border: 3px solid var(--border-color-board);
+  border-radius: var(--radius-m);
+}
+
+.taskTitle {
+  font-size: 16px;
+  line-height: 1;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.assignee {
+  font-size: 12px;
+  color: var(--secondary-text-color);
+}
+
+.statusTitle {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--border-color-board);
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tasksList > li {
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}

@@ -1,0 +1,45 @@
+.formContainer {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.formTitle {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.inputTitle {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.textField,
+.selectField {
+  padding: 10px;
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+}
+
+.selectField:disabled {
+  color: var(--btn-disabled);
+  border-color: var(--btn-disabled);
+}
+
+.formBtnContainer {
+  margin-top: 20px;
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}

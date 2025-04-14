@@ -1,0 +1,35 @@
+header {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.headerContainer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigationList {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+} 
+
+.menuLink {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.activePage {
+    color: var(--border-color-board);
+}
+
+.createTaskBtn {
+    margin-left: auto;
+}

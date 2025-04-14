@@ -1,0 +1,74 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: black;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.itemHover {
+  transition: all 0.3s ease-in-out;
+}
+
+.itemHover:hover,
+.itemHover:hover > * {
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+  transform: scale(1.02);
+}
+
+.btn {
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover:not(:disabled) {
+  color: white;
+  border-color: var(--btn-hover-bg);
+  background-color: var(--btn-hover-bg);
+}
+
+.btn:active:not(:disabled) {
+  color: white;
+  border-color: var(--btn-active-bg);
+  background-color: var(--btn-active-bg);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  color: var(--btn-disabled);
+  border-color: var(--btn-disabled);
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

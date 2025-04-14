@@ -1,5 +1,8 @@
 {
   "files": [],
+  "include": [
+    "global.d.ts"    // Если файл в корне
+  ],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
@@ -7,6 +10,7 @@
   "compilerOptions": {
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "typeRoots": ["node_modules/@types", "src/types"]
   }
 }

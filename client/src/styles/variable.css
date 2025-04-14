@@ -1,0 +1,22 @@
+:root {
+    /* text decoration */
+    --primary-text-color: black;
+    --secondary-text-color: #848585;
+    /* borders */
+    --radius-s: 5px;
+    --radius-m: 10px;
+    --radius-l: 20px;
+    --border-color: black;
+    --border-color-board: rgb(99, 132, 198);
+
+    /* buttons */
+    --btn-hover-bg: #5c5e5e;
+    --btn-active-bg:  #363737;
+    --btn-disabled: #848585;
+
+    /* list hover effects */
+    --hover-color:  rgb(99, 132, 198);
+
+    /* status */
+    --status-color: rgb(99, 132, 198);
+}

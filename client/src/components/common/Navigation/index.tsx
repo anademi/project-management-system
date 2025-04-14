@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 import { useModal } from "../../../store/modal";
 
 export const Navigation = () => {
-  const {setIsModalOpen} = useModal();
+  const { setIsModalOpen } = useModal();
   const { pathname } = useLocation();
 
   const isActive = (path: string) =>
@@ -42,7 +42,10 @@ export const Navigation = () => {
               </NavLink>
             </li>
           </ul>
-          <button className={`${styles.createTaskBtn} btn`} onClick={handleCreateButtonClick}>
+          <button
+            className={`${styles.createTaskBtn} btn`}
+            onClick={handleCreateButtonClick}
+          >
             Создать задачу
           </button>
         </nav>

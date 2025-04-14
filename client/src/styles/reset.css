@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -9,7 +8,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-y: scroll; 
+  overflow-y: scroll;
 }
 
 input,

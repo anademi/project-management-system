@@ -7,22 +7,17 @@ import { Form } from "../Form";
 import { TASK_INITIAL_STATE, useModal } from "../../store/modal";
 
 export const Layout = () => {
-  const fetchData = useStore(store => store.fetchData);
-  const {
-    isModalOpen,
-    setIsModalOpen,
-    setTaskData,
-  } = useModal();
+  const fetchData = useStore((store) => store.fetchData);
+  const { isModalOpen, setIsModalOpen, setTaskData } = useModal();
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setTaskData(TASK_INITIAL_STATE)
-  }
-
+    setIsModalOpen(false);
+    setTaskData(TASK_INITIAL_STATE);
+  };
 
   return (
     <>

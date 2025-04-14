@@ -1,20 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client';
-import { ALL_BOARDS_ROUTE, ISSUES_ROUTE, INDEX_ROUTE, BOARD_ROUTE } from './constants/routes';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import {
+  ALL_BOARDS_ROUTE,
+  ISSUES_ROUTE,
+  INDEX_ROUTE,
+  BOARD_ROUTE,
+} from "./constants/routes";
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
 
-import './style.css'
+import "./style.css";
 
-import { AllBoardsPage } from './pages/AllBoardsPage';
-import { IssuesPage } from './pages/IssuesPage';
-import { BoardPage } from './pages/BoardPage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { Layout } from './components/common/Layout';
-
+import { AllBoardsPage } from "./pages/AllBoardsPage";
+import { IssuesPage } from "./pages/IssuesPage";
+import { BoardPage } from "./pages/BoardPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import { Layout } from "./components/common/Layout";
 
 const navRoutes = [
   {
@@ -45,8 +49,8 @@ const allRoutes = [
 
 const routes = createBrowserRouter(allRoutes);
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={routes} />
   </StrictMode>,
-)
+);

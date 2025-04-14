@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { TaskPayload } from '../types';
-import { devtools } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 
 export const TASK_INITIAL_STATE: TaskPayload = {
     assigneeId: 0,
@@ -12,19 +12,30 @@ export const TASK_INITIAL_STATE: TaskPayload = {
 };
 
 type ModalStore = {
-    taskData: TaskPayload,
-    setTaskData: (data: Partial<TaskPayload>) => Promise<void>;
-    isModalOpen: boolean;
-    setIsModalOpen: (value: boolean) => Promise<void>;
+    taskData: Partial<TaskPayload>,
+    setTaskData: (data: Partial<TaskPayload>) => void;
     resetTaskData: () => void;
+
+    draftData: Partial<TaskPayload>;
+    updateDraft: (data: Partial<TaskPayload>) => void;
+    clearDraft: () => void;
+
+    isModalOpen: boolean;
+    setIsModalOpen: (value: boolean) => void;
 };
 
-export const useModal = create<ModalStore>()(devtools((set) => ({
+export const useModal = create<ModalStore>()(persist((set) => ({
     taskData: TASK_INITIAL_STATE,
     isModalOpen: false,
     setIsModalOpen: (value: boolean) => set({ isModalOpen: value }),
-    setTaskData: (data: TaskPayload) => set((state) => ({
+    setTaskData: (data: Partial<TaskPayload>) => set((state) => ({
         taskData: { ...state.taskData, ...data }
     })),
     resetTaskData: () => set({ taskData: TASK_INITIAL_STATE }),
-})));
+    draftData: {},
+    updateDraft: (data) => set({ draftData: data }),
+    clearDraft: () => set({ draftData: {} }),
+}), {
+    name: 'form-draft',
+    partialize: (state) => ({ draftData: state.draftData })
+}));

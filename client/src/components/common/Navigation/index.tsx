@@ -6,9 +6,7 @@ import styles from "./styles.module.css";
 import { useModal } from "../../../store/modal";
 
 export const Navigation = () => {
-  const {
-    setIsModalOpen, resetTaskData
-  } = useModal();
+  const {setIsModalOpen} = useModal();
   const { pathname } = useLocation();
 
   const isActive = (path: string) =>
@@ -16,7 +14,7 @@ export const Navigation = () => {
     pathname.startsWith(path) ||
     pathname.startsWith(path.slice(0, -1));
 
-  const handleCreateButtonClick = () => { resetTaskData(); setIsModalOpen(true) }
+  const handleCreateButtonClick = () => setIsModalOpen(true);
 
   return (
     <header>

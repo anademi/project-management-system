@@ -5,7 +5,7 @@ import { PRIORITIES, STATUS_DISPLAY_NAME, STATUSES } from "../../constants/field
 
 import styles from "./styles.module.css";
 import { useStore } from "../../store";
-import { useModal } from "../../store/modal";
+import { TASK_INITIAL_STATE, useModal } from "../../store/modal";
 import { Status, TaskPayload } from "../../types";
 
 const numericFields = ["assigneeId", "boardId"];
@@ -18,7 +18,7 @@ export const Form = () => {
         createTask,
         updateTask,
     } = useStore();
-    const { setIsModalOpen, taskData, setTaskData, resetTaskData } = useModal()
+    const { setIsModalOpen, taskData, setTaskData, resetTaskData, draftData, updateDraft, clearDraft } = useModal()
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const { id: idParams } = useParams<{ id: string }>();
@@ -43,6 +43,24 @@ export const Form = () => {
             });
         }
     }, [idParams, isBoardPage]);
+
+    useEffect(() => {
+        if (Object.keys(draftData).length > 0) {
+            setTaskData({ ...TASK_INITIAL_STATE, ...draftData });
+        }
+
+        return () => {
+            clearDraft();
+            resetTaskData();
+        };
+    }, []);
+
+    useEffect(() => {
+        if (mode === 'create') {
+            updateDraft(taskData);
+        }
+
+    }, [taskData, mode]);
 
     const currentTask = taskData.id && tasks.find(task => task.id === taskData.id);
 
@@ -75,7 +93,6 @@ export const Form = () => {
             console.error(error);
         } finally {
             setIsModalOpen(false);
-            resetTaskData();
         }
     };
 

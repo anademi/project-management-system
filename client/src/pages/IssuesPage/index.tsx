@@ -20,7 +20,7 @@ export const IssuesPage = () => {
         error,
     } = useStore();
     const {
-        setIsModalOpen, setTaskData, resetTaskData
+        setIsModalOpen, setTaskData,
     } = useModal();
 
     const [filters, setFilters] = useState({} as Filters);
@@ -37,7 +37,7 @@ export const IssuesPage = () => {
         setFilters((prev) => ({ ...prev, [name]: value }))
     }
 
-    const handleCreateButtonClick = () => { resetTaskData(); setIsModalOpen(true) }
+    const handleCreateButtonClick = () => {setIsModalOpen(true) }
 
     const { searchQuery, statusFilter, boardNameFilter } = filters;
     const filteredTasks = useMemo(

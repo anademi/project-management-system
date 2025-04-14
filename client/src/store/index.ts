@@ -10,8 +10,8 @@ type TaskStore = {
     loading: boolean;
     error: string | null;
     fetchData: () => Promise<void>;
-    createTask: (payload: TaskPayload) => Promise<void>;
-    updateTask: (id: number, payload: TaskPayload) => Promise<void>;
+    createTask: (payload: Partial<TaskPayload>) => Promise<void>;
+    updateTask: (id: number, payload: Partial<TaskPayload>) => Promise<void>;
 };
 
 const apiService = new ApiService();

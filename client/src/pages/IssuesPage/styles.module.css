@@ -1,0 +1,105 @@
+.issuesContainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.searchField {
+  min-width: 150px;
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+}
+
+.selectFilter {
+  width: fit-content;
+  min-width: 120px;
+}
+
+.selectFilter:last-child {
+  max-width: 50px;
+}
+
+.searchField,
+.selectFilter {
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: white;
+}
+
+.selectFilter option {
+  padding: 5px;
+  background: white;
+}
+
+.selectFilter {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23212529'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-position: right 5px center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.listItem {
+  position: relative;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}
+
+.taskTitle {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.boardName {
+  margin-bottom: 5px;
+}
+
+.assigneeName {
+  font-size: 12px;
+  color: var(--secondary-text-color);
+}
+
+.statusLabel {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 5px;
+  color: var(--status-color);
+  border: 1px solid var(--status-color);
+  border-radius: var(--radius-m);
+  box-shadow: 0 0 2px 0px var(--status-color);
+}
+
+.createTaskBtn {
+  align-self: flex-end;
+}

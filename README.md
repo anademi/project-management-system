@@ -7,8 +7,8 @@
 ### Установка через Docker (рекомендуется)
 ```bash
 # Клонировать репозиторий
-git clone https://github.com/anademi/avito-tech-frontend-2025-spring
-cd avito-tech-frontend-2025-spring
+git clone https://github.com/anademi/project-management-system
+cd project-management-system
 
 # Запустить сервисы
 docker-compose up --build
